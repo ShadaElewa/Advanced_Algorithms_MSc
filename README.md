@@ -3,7 +3,7 @@
 > **Faculty of Computers and Artificial Intelligence - Cairo University**
 
 ![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python&logoColor=white)
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Educational-green?style=for-the-badge)
 
 ## 🧐 Project Objective
@@ -24,13 +24,42 @@ This project performs a comparative analysis of 5 fundamental sorting algorithms
 ```text
 Advanced_Algorithms_MSc/
 ├── algorithms/             # Source code for sorting logic
-│   ├── quick_sort.py       # Randomized Quick Sort
-│   ├── heap_sort.py        # Iterative Max-Heap Sort
-│   ├── count_sort.py       # Counting Sort
-│   ├── radix_sort.py       # (Coming Soon)
-│   └── bucket_sort.py      # (Coming Soon)
 ├── data_generator.py       # Factory for Random, Sorted, and Float datasets
 ├── test_integration.py     # Unit testing script to verify correctness
 ├── benchmark_driver.py     # Main script for Time/Memory analysis
-└── .gitignore              # Configurations to ignore unnecessary files
-```
+├── visualize_results.py    # Generates PNG graphs from CSV data
+├── analysis_results.csv    # Raw performance data
+├── Project_1_Results.xlsx  # Detailed Excel Analysis with Pivot Tables
+└── .gitignore              # Configuration
+
+## 🛠️ How to Run
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/Advanced_Algorithms_MSc.git
+    cd Advanced_Algorithms_MSc
+    ```
+2. **Install Dependencies**:
+   ```bash
+    pip install -r requirements.txt
+    ```
+3. **Run Benchmarks**:
+    ```bash
+     python benchmark_driver.py
+     ```
+4. **Visualize Results**:
+    ```bash
+     python visualize_results.py
+     ```
+
+## 📊 Performance Results
+The performance results are saved in `analysis_results.csv` and visualized in `Project_1_Results.xlsx`.
+### 1. Execution Time Analysis
+*Observation: Distribution-based sorts (Bucket/Count) outperform comparison sorts (Quick/Heap) on large datasets.*
+
+![Execution Time Graph](./graph_time_complexity.png)
+
+### 2. Memory Usage Analysis
+*Observation: Heap Sort is the most memory-efficient (In-Place), while Bucket Sort consumes significant memory due to list overhead.*
+
+![Memory Usage Graph](./graph_memory_usage.png)
+
