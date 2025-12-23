@@ -31,7 +31,7 @@ Advanced_Algorithms_MSc/
 ├── analysis_results.csv    # Raw performance data
 ├── Project_1_Results.xlsx  # Detailed Excel Analysis with Pivot Tables
 └── .gitignore              # Configuration
-
+```
 ## 🛠️ How to Run
 1. **Clone the Repository**:
    ```bash
