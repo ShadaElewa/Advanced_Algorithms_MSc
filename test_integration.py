@@ -1,54 +1,69 @@
 import time
 import sys
 
-# 1. Import your logic
+# Algorithms
 from algorithms.quick_sort import quick_sort
 from algorithms.heap_sort import heap_sort
-# 2. Import your data factory
+from algorithms.count_sort import count_sort
+from algorithms.radix_sort import radix_sort
+from algorithms.bucket_sort import bucket_sort 
+
+# Data Factory
 from data_generator import DataGenerator
 
 def test_algorithm(name, sort_function, original_data):
     """
-    Helper function to time and validate a sorting algorithm.
+    Standard test function for any algorithm
     """
-    # CRITICAL: Create a copy of the data. 
-    # If we don't, the first algorithm sorts the list, and the second 
-    # gets an already sorted list!
+    
     arr_copy = original_data[:] 
     
     start_time = time.perf_counter()
     sorted_data = sort_function(arr_copy)
     end_time = time.perf_counter()
     
-    # Validation check
-    is_sorted = all(sorted_data[i] <= sorted_data[i+1] for i in range(len(sorted_data)-1))
-    
+    # Handles both integers and floats correctly
+    is_sorted = True
+    for i in range(len(sorted_data)-1):
+        if sorted_data[i] > sorted_data[i+1]:
+            is_sorted = False
+            break
+            
     if is_sorted:
         print(f"✅ {name}: Success in {(end_time - start_time):.6f} seconds.")
     else:
-        print(f"❌ {name}: Failed (Data not sorted).")
+        print(f"❌ {name}: Failed.")
 
 def run_test():
-    print("--- Integration Test Started ---")
+    print("========================================")
+    print("   ADVANCED ALGORITHMS INTEGRATION TEST   ")
+    print("========================================")
     
-    # Define size
-    N = 20000 
+    N = 50000 
     
-    # 1. Generate Data ONCE
-    print(f"[1] Generating {N} random integers...")
-    master_data = DataGenerator.get_uniform_integers(N)
     
-    print("-" * 40)
+    print(f"\n[PART 1] Testing Integer Sorts (N={N})")
+    print("Generating random integers...")
+    int_data = DataGenerator.get_uniform_integers(N)
     
-    # 2. Test Quick Sort
-    test_algorithm("Quick Sort", quick_sort, master_data)
+    test_algorithm("Quick Sort", quick_sort, int_data)
+    test_algorithm("Heap Sort ", heap_sort, int_data)
+    test_algorithm("Count Sort", count_sort, int_data)
+    test_algorithm("Radix Sort", radix_sort, int_data)
     
-    # 3. Test Heap Sort
-    test_algorithm("Heap Sort ", heap_sort, master_data)
     
-    print("-" * 40)
+    print(f"\n[PART 2] Testing Float Sorts (N={N})")
+    print("Generating random floats [0, 1)...")
+    float_data = DataGenerator.get_uniform_floats(N)
+    
+    
+    test_algorithm("Bucket Sort", bucket_sort, float_data)
+    
+    
+    test_algorithm("Quick Sort", quick_sort, float_data) 
+    
+    print("\n========================================")
 
 if __name__ == "__main__":
-    # Increase recursion limit just in case
     sys.setrecursionlimit(20000)
     run_test()
