@@ -31,14 +31,12 @@ Advanced_Algorithms_MSc/
 ├── Results/                # Generated Data & Visuals
 │   ├── analysis_results.csv
 │   ├── Project_1_Results.xlsx
-│   └── Graphs (.png)
+│   ├── graph_time_complexity.png
+│   └── graph_memory_usage.png
 └── Report/                 # Final PDF Submission
     └── Final_Report.pdf
 ```
-<<<<<<< HEAD:Report/README.md
 
-=======
->>>>>>> ed470c482b08260fec9421d71a4154ea4cf9f871:README.md
 ## 🛠️ How to Run
 1. **Clone the Repository**:
    ```bash
@@ -63,10 +61,10 @@ The performance results are saved in `analysis_results.csv` and visualized in `P
 ### 1. Execution Time Analysis
 *Observation: Distribution-based sorts (Bucket/Count) outperform comparison sorts (Quick/Heap) on large datasets.*
 
-![Execution Time Graph](./graph_time_complexity.png)
+![Execution Time Graph](./Results/graph_time_complexity.png)
 
 ### 2. Memory Usage Analysis
 *Observation: Heap Sort is the most memory-efficient (In-Place), while Bucket Sort consumes significant memory due to list overhead.*
 
-![Memory Usage Graph](./graph_memory_usage.png)
+![Memory Usage Graph](./Results/graph_memory_usage.png)
 
