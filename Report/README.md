@@ -32,7 +32,10 @@ Advanced_Algorithms_MSc/
 ├── Project_1_Results.xlsx  # Detailed Excel Analysis with Pivot Tables
 └── .gitignore              # Configuration
 ```
+<<<<<<< HEAD:Report/README.md
 
+=======
+>>>>>>> ed470c482b08260fec9421d71a4154ea4cf9f871:README.md
 ## 🛠️ How to Run
 1. **Clone the Repository**:
    ```bash
