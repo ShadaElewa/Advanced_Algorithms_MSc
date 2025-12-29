@@ -2,7 +2,7 @@
 venv/
 env/
 
-# Ignore compiled python files
+Results/Project_1_Results.xlsx
 __pycache__/
 *.pyc
 
